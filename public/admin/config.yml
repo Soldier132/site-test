@@ -1,0 +1,36 @@
+backend:
+  name: github
+  repo: your-org/site-test
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "blog"
+    label: "Блог"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "mdx"
+    format: "frontmatter"
+    fields:
+      - { label: "Заголовок", name: "title", widget: "string" }
+      - { label: "Дата", name: "date", widget: "datetime" }
+      - { label: "Описание", name: "excerpt", widget: "text" }
+      - { label: "Теги", name: "tags", widget: "list" }
+      - { label: "Текст", name: "body", widget: "markdown" }
+
+  - name: "services"
+    label: "Услуги"
+    folder: "content/services"
+    create: true
+    slug: "{{slug}}"
+    extension: "mdx"
+    format: "frontmatter"
+    fields:
+      - { label: "Заголовок", name: "title", widget: "string" }
+      - { label: "Кратко", name: "excerpt", widget: "text" }
+      - { label: "Цена от", name: "priceFrom", widget: "string" }
+      - { label: "Фичи", name: "features", widget: "list" }
+      - { label: "Описание", name: "body", widget: "markdown" }
